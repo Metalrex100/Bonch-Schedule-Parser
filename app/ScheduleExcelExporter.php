@@ -180,7 +180,7 @@ class ScheduleExcelExporter
             $this->fillCell(
                 $column,
                 $pairRow,
-                sprintf('%d (%s)', $pair['number'], $pair['time']),
+                sprintf('%d %s', $pair['number'], $pair['time']),
                 self::CELL_TYPE_PAIR_NUMBER
             );
 

@@ -93,9 +93,9 @@ class ScheduleParser
 
         $scheduleTable->filter('tr.pair')->each(function (Crawler $node) use (&$schedule, &$weekNumber, &$lastWeekday) {
             $weekday = (int) $node->attr('weekday');
-            $pairInfo = explode(' ', $node->attr('pair'));
-            $pairNumber = array_first($pairInfo);
-            $pairTime = strtr(array_last($pairInfo), ['(' => '', ')' => '']);
+            $pairInfo = explode(' ', $node->filter('td')->eq(1)->text());
+            $pairNumber = array_shift($pairInfo);
+            $pairTime = array_shift($pairInfo);
             $pairDate = substr($node->filter('td')->first()->text(), 0, 10);
             $pairType = $node->filter('td span.type')->text();
             $pairSubject = $node->filter('td span.subect')->text();
