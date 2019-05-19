@@ -9,6 +9,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ScheduleParser
 {
+    const SCHEDULE_URL = 'https://cabinet.sut.ru/raspisanie_all_new';
+
     /**
      * @var Client
      */
@@ -34,8 +36,6 @@ class ScheduleParser
     {
         $this->client = new Client();
     }
-
-    const SCHEDULE_URL = 'https://cabinet.sut.ru/raspisanie_all_new';
 
     /**
      * @return array
